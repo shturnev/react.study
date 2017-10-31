@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body>
+<div id="app"></div>
+<div id="container"></div>
+
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+<script type="text/babel">
+
+    function tick() {
+        ReactDOM.render(
+                <div>
+                    <h2>Текущее время {new Date().toLocaleTimeString()}.</h2>
+                </div>,
+            document.getElementById("app")
+        );
+    }
+    setInterval(tick, 1000);
+    ReactDOM.render(
+            <div>
+                <h2>Список телефонов</h2>
+                <ul>
+                    <li>iPhone 7</li>
+                    <li>Samsung Galaxy A5</li>
+                    <li>HTC U Ultra</li>
+                    <li>Pixel XL</li>
+                </ul>
+            </div>,
+        document.getElementById("container"),
+        function(){ console.log("рендеринг элемента React");}
+    )
+</script>
+
+</body>
+</html>
