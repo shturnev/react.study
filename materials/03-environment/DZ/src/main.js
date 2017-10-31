@@ -1,6 +1,9 @@
-import {sum} from './test.js';
-import {yy} from './ttt.jsx';
+var ReactDOM = require('react-dom');
+var React = require('react');
+// var NotesApp = require('./components/NotesApp.jsx');
+import {NotesApp} from './components/NotesApp.jsx';
 
-require('./style.css');
-
-console.log(yy + 444);
+ReactDOM.render(
+    <NotesApp />,
+    document.getElementById('root')
+);
