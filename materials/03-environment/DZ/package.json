@@ -1,0 +1,30 @@
+{
+  "name": "dz-03",
+  "version": "1.0.0",
+  "description": "пробуем настроить webpack и react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "jquery": "*"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "css-loader": "*",
+    "file-loader": "*",
+    "json-loader": "*",
+    "postcss-loader": "^2.0.8",
+    "react-hot-loader": "^3.1.1",
+    "style-loader": "*",
+    "url-loader": "*",
+    "webpack": "*",
+    "webpack-dev-server": "*"
+  }
+}
