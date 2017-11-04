@@ -1,8 +1,8 @@
 import {articles as db} from './db.js';
 import React from 'react';
 import {render} from 'react-dom';
-import Article from './Article';
+import Articles from './components/Articles';
 
-render(<Article db={db[0]} />, document.getElementById('root'));
+render(<Articles />, document.getElementById('root'));
 
 
