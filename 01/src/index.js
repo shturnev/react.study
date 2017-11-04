@@ -1,5 +1,8 @@
-import Test from './test.js';
+import {articles as db} from './db.js';
+import React from 'react';
+import {render} from 'react-dom';
+import Article from './Article';
 
-const t = new Test;
+render(<Article db={db[0]} />, document.getElementById('root'));
 
-console.log((new Test).bye());
+
