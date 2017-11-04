@@ -1,16 +1,5 @@
 import React, {Component} from 'react';
-
-//простой stateless компонент
-/*
-export default function Article(props) {
-    return (
-        <article>
-            <h2>{props.db.title}</h2>
-            <div className = "text">{props.db.text}</div>
-        </article>
-    );
-}*/
-
+import Comments from './Comments';
 
 //Перепишем на компонент из класса
 export default class Article extends Component{
@@ -39,8 +28,8 @@ export default class Article extends Component{
 
     getText(){
         if(!this.state.isOpen){return null;}
-        let text = this.props.db.text;
-        return <div className = "text">{text}</div>
+        let {text, comments} = this.props.db;
+        return <div className = "text">{text} <Comments comments={comments} /> </div>
     }
 
     getBtn(){
