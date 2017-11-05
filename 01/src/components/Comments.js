@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 import Comment from './Comment';
+import PropTypes from 'prop-types';
+
 
 export default class Comments extends Component{
+
     constructor(props){
         super(props);
 
         this.state   = {isOpen: false};
         this.toggler = this.toggler.bind(this);
+
     }
 
+
     render(){
-        if(!this.props.comments){return null;}
+        if(!this.props.comments.length){return null;}
         return (
             <div className="comments-cont" style={{margin: '15px'}}>
                 <button className="toggler" onClick={this.toggler}>{this.state.isOpen ? 'скрыть': 'показать'} комментарии</button>
@@ -33,3 +38,7 @@ export default class Comments extends Component{
     }
 
 }
+
+Comments.defaultProps = { //таким образом можно объявить стандартные значения для props
+    comments: []
+};

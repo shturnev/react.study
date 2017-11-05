@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 /*
 export default class Comment extends Component{
@@ -16,3 +17,11 @@ export default function Comment(props){
         </div>
     );
 }
+
+Comment.propTypes = { //таким образом можно проверять тип входящих данных
+  comment: PropTypes.shape({
+      id: PropTypes.string,
+      user: PropTypes.string,
+      text: PropTypes.string
+  }).isRequired
+};
