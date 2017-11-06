@@ -27,13 +27,13 @@ export default class Article extends Component{
     }
 
     getText(){
-        if(!this.state.isOpen){return null;}
+        if(!this.props.isOpen){return null;}
         let {text, comments} = this.props.db;
         return <div className = "text">{text} <Comments comments={comments} /> </div>
     }
 
     getBtn(){
-        let text = this.state.isOpen ? 'скрыть текст' : 'показать текст';
+        let text = this.props.isOpen ? 'скрыть текст' : 'показать текст';
 
         return (
             <div style={{'marginTop': '10px'}}>
@@ -43,10 +43,14 @@ export default class Article extends Component{
 
     }
 
-    toggler(){
+   /* toggler(){
         this.setState({
             isOpen: !this.state.isOpen
         });
+    }*/
+
+    toggler(){
+        this.props.toggler(this.props.db.id); //вызываем родительский метод и перестраиваем DOM
     }
 
 
