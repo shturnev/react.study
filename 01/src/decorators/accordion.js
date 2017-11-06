@@ -9,8 +9,11 @@ export default (OriginalComponent) => class WrappedComponent extends Component{
     }
 
     toggler(articleId){
+
+        let newValue = (articleId === this.state.openArticle)? false : articleId;
+
         this.setState({
-            openArticle: articleId
+            openArticle: newValue
         });
     }
 
