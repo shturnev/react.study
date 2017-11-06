@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import {articles as db} from '../db.js';
 import Article from './Article';
+import accordion from '../decorators/accordion';
+
 
 
 /*export default function Articles() {
@@ -14,12 +16,12 @@ import Article from './Article';
 
 
 
-export default class Articles extends Component{
+class Articles extends Component{
     constructor(props){
         super(props);
 
-        this.state = {openArticle: false};
-        this.toggleOpen = this.toggleOpen.bind(this);
+        // this.state = {openArticle: false};
+        // this.toggleOpen = this.toggleOpen.bind(this);
     }
 
     render(){
@@ -27,8 +29,8 @@ export default class Articles extends Component{
             <Article
                 db={item}
                 key={item.id}
-                isOpen={item.id === this.state.openArticle}
-                toggler={this.toggleOpen}
+                isOpen={item.id === this.props.openArticle}
+                toggler={this.props.toggler}
             />
         );
 
@@ -38,11 +40,11 @@ export default class Articles extends Component{
         );
     }
 
-    toggleOpen(articleId){
+    /*toggleOpen(articleId){
         this.setState({
             openArticle: articleId
         });
-    }
-
-
+    }*/
 }
+
+export default accordion(Articles); //вынес toggler в отдельный декоратор
