@@ -12,13 +12,24 @@ module.exports = {
     module:{
         rules:[
             {
-                test: /\.js/,
+                test: /\.js$/,
                 include: path.join(__dirname, 'src'),
                 use: [
                     {
-                        loader: 'babel-loader', options: {presets: ["react", "env", "react-hmre"]}
+                        loader: 'babel-loader', options: {presets: ["react", "env", "stage-0", "react-hmre"]}
                     }
                 ]
+
+            },
+            {
+                test: /\.css$/,
+                include: path.join(__dirname, 'src'),
+                loaders: ['style-loader', 'css-loader']
+                /*use: [
+                    {
+                        loaders: "style-loader!css-loader"/!* *!/
+                    }y
+                ]*/
 
             }
         ]
