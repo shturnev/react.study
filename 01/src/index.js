@@ -1,6 +1,6 @@
-import {articles as db} from './db.js';
 import React from 'react';
 import {render} from 'react-dom';
+import Counter from './components/Counter'
 
 //components
 import Articles from './components/Articles';
@@ -11,6 +11,8 @@ import './style/test.css';
 
 render(
     <div>
+        <Counter/>
+        <hr/>
         <DataPicker/>
         <Articles />
     </div>,

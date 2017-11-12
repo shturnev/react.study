@@ -3,10 +3,13 @@ const path      = require('path');
 
 module.exports = {
     devtool: 'source-map',
-    entry: './src/index.js',
+    entry: {
+        roman: './src/index.js',
+        monsterlessons: './src2/index.js',
+    },
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         publicPath: '/build/'
     },
     module:{
