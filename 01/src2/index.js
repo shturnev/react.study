@@ -13,7 +13,28 @@ function playlistReducer(state = [], action) {
 
 const store = createStore(playlistReducer, 0);
 window.store = store;
-store.dispatch({type: 'ADD_TRACK', payload: 'добавили ещё один трек'});
-store.dispatch({type: 'ADD_TRACK', payload: 'добавили ещё один трек'});
-store.dispatch({type: 'ADD_TRACK', payload: 'добавили ещё один трек'});
-store.dispatch({type: 'ADD_TRACK', payload: 'добавили ещё один трек'});
+
+//--
+const addTrackBtn = document.querySelector('.addTrack');
+const trackInput  = document.querySelector('.trackInput');
+
+addTrackBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const trackName = trackInput.value;
+    store.dispatch({type: 'ADD_TRACK', payload: trackName});
+
+});
+
+store.subscribe(()=>{
+
+    const list = document.querySelector('.list');
+    list.innerHTML = '';
+    trackInput.value = '';
+
+    store.getState().map((item) => {
+       const li = document.createElement('li');
+       li.innerText = item;
+       list.appendChild(li);
+    });
+
+});
