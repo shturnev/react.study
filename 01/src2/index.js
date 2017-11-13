@@ -17,7 +17,7 @@ function playlistReducer(state = [], action) {
     return state;
 }
 
-const store = createStore(playlistReducer);
+const store = createStore(playlistReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 window.store = store;
 
 
